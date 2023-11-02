@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="webicon.ico" type="image/x-icon">
+    <title>Rincón de Sabores</title>
+
+<script>
+  function validarFormulario(){
+
+    let nombre = document.forms["contactanos"]["nombre"].value;
+    if (nombre== "") {
+    alert("Por favor, ingresá tu nombre.");
+    return false;
+    }
+    else if (isNaN(nombre) === false) {
+    alert("Por favor, no utilizes números para escribir el nombre.");
+    return false; 
+    }
+
+    let mensaje = document.forms["contactanos"]["mensaje"].value;
+    if (mensaje== "") {
+    alert("Por favor, no olvides escribir tu sugerencia o duda.");
+    return false;
+    }
+  }
+</script>
+
+</head>
+<body>
+
+<div class="container">
+
+    <!-- img. banner -->
+
+    <div class="banner">
+        <img class="bannerimg" src="img/banner.png">
+    </div>
+
+  </div>
+
+<div class="nav">
+    <div class="nav-right">
+          <a href="index.html">INICIO</a>
+          <a href="almcen.html">ALMUERZOS & CENAS</a>
+          <a href="desmer.html">DESAYUNOS & MERIENDAS</a>
+          <a href="contacto.html">CONTACTO</a>
+    </div>
+</div>
+
+<section>
+  
+<article>
+  
+  <h1>¿Tenés dudas o sugerencias para que podamos mejorar? ¡Te leemos!</h1>
+  <img src="img/icons/chef.png" width="60px" height="60px">
+
+<form name="contactanos" action="contacto.php" onsubmit="return validarFormulario()" method="post">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre"><br>
+
+        <label for="email">E-Mail:</label><br>
+        <input type="text" id="email" name="email"><br>
+
+        <label for="mensaje">Tu mensaje:</label><br>
+        <textarea name="mensaje" rows="5" cols="40"></textarea><br>
+
+        <input type="submit" value="Enviar">
+</form>
+
+</article>
+
+</section>
+
+<footer>
+    <p>Todos los derechos reservados © 2023 <b>Rincón de Sabores</b>.</p>
+</footer>
+
+</body>
+</html>
